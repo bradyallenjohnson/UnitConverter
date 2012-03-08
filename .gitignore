@@ -1,0 +1,6 @@
+*.[oa]
+*~
+*.mk
+*.class
+build/
+nbproject/
