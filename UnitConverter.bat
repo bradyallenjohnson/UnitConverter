@@ -1,2 +1,2 @@
 @echo off
-java -cp . com.johnson.UnitConverter.UnitConverterMain
+java -cp classes com.johnson.UnitConverter.UnitConverterMain
