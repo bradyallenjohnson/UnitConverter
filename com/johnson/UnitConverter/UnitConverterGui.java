@@ -217,6 +217,7 @@ public class UnitConverterGui extends JFrame
 			}
 			lastCmbType = cmbType;
 			setLabelsFields(cmbType);
+			jbtConvert.setEnabled(true);
 		}
 	}
 
