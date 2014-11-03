@@ -16,6 +16,7 @@ public class MeasurementFactory
 	public final static String MEASURE_VOLUME       = "Volume";
 	public final static String MEASURE_MILEAGE      = "Gas Mileage";
 	public final static String MEASURE_AREA         = "Area";
+	public final static String MEASURE_POWER		= "Power";
 
 	public final static String UNIT_LENGTH_CM       = "centimeter";
 	public final static String UNIT_LENGTH_METER    = "meter";
@@ -52,6 +53,11 @@ public class MeasurementFactory
 	public final static String UNIT_AREA_SQ_MILE    = "square mile";
 	public final static String UNIT_AREA_ACRE       = "acre";
 	public final static String UNIT_AREA_HECTARE    = "hectare";
+	
+	public final static String UNIT_POWER_WATT		= "watt";
+	public final static String UNIT_POWER_HORSEPOWER = "horsepower";
+	public final static String UNIT_POWER_CALORIES_PER_SECOND = "calories per second";
+	public final static String UNIT_POWER_BTU_PER_SECOND = "BTU per second";
 
 	private Map<String, Measurement> measurements;
 	private static MeasurementFactory instance = null;
@@ -155,8 +161,19 @@ public class MeasurementFactory
 		areaMeasurements.addUnit(new MeasurementUnit(UNIT_AREA_ACRE,    Math.pow((100.0/(12.0*5280.0*2.54)), 2)*640.0));
 
 		//
+		// Power
+		//   The reference will be watt
+		//
+		Measurement powerMeasurements = new Measurement(MEASURE_POWER);
+		powerMeasurements.setDecimalPlaces(3);
+		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_WATT));
+		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_HORSEPOWER, 1.0/745.699872));
+		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_CALORIES_PER_SECOND, 0.239005736));
+		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_BTU_PER_SECOND, 0.00094781712));
+		
+		//
 		// Future measurements:
-		//		Area, Power, Pressure, Currency
+		//		Power, Pressure, Currency
 		//
 
 		//
@@ -168,5 +185,6 @@ public class MeasurementFactory
 		this.measurements.put(MEASURE_VOLUME,       volumeMeasurements);
 		this.measurements.put(MEASURE_MILEAGE,      mileageMeasurements);
 		this.measurements.put(MEASURE_AREA,         areaMeasurements);
+		this.measurements.put(MEASURE_POWER, 		powerMeasurements);
 	}
 }
