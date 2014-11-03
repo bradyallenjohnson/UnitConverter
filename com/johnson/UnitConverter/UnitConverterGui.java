@@ -33,6 +33,7 @@ public class UnitConverterGui extends JFrame
 	private boolean initFlag;
 	private MeasurementFactory measurementFactory;
 	private JComboBox jcbMeasurementType;
+	private JButton jbtConvert;
 	private JLabel[] jlbLabels;
 	private JTextField[] jtfFields;
 	private JPanel jplLabels;
@@ -110,7 +111,7 @@ public class UnitConverterGui extends JFrame
 		//
 		// Buttons
 		//
-		JButton jbtConvert = new JButton(BUTTON_TEXT_CONVERT);
+		jbtConvert = new JButton(BUTTON_TEXT_CONVERT);
 		jbtConvert.setActionCommand(BUTTON_TEXT_CONVERT);
 		jbtConvert.addActionListener(buttonHandler);
 
@@ -183,6 +184,8 @@ public class UnitConverterGui extends JFrame
 			jtfFields[i].setText("");
 			jtfFields[i].setEditable(editable);
 		}
+		
+		jbtConvert.setEnabled(true);
 	}
 
 /* Use this to capture mouse selection, etc
@@ -239,6 +242,8 @@ public class UnitConverterGui extends JFrame
 			{
 				String unitName = null;
 				String value = null;
+				
+				jbtConvert.setEnabled(false);
 
 				for(int i = 0; i < NUM_LABELS_FIELDS; i++)
 				{
