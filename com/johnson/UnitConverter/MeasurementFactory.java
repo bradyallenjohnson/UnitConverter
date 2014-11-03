@@ -17,6 +17,7 @@ public class MeasurementFactory
 	public final static String MEASURE_MILEAGE      = "Gas Mileage";
 	public final static String MEASURE_AREA         = "Area";
 	public final static String MEASURE_POWER		= "Power";
+	public final static String MEASURE_PRESSURE		= "Pressure";
 
 	public final static String UNIT_LENGTH_CM       = "centimeter";
 	public final static String UNIT_LENGTH_METER    = "meter";
@@ -59,6 +60,12 @@ public class MeasurementFactory
 	public final static String UNIT_POWER_CALORIES_PER_SECOND = "calories per second";
 	public final static String UNIT_POWER_BTU_PER_SECOND = "BTU per second";
 
+	public final static String UNIT_PRESSURE_PASCAL = "pascal";
+	public final static String UNIT_PRESSURE_ATMOSPHERE = "atmosphere";
+	public final static String UNIT_PRESSURE_BAR 	= "bar";
+	public final static String UNIT_PRESSURE_PSI 	= "psi";
+	public final static String UNIT_PRESSURE_TORR 	= "torr";
+	
 	private Map<String, Measurement> measurements;
 	private static MeasurementFactory instance = null;
 
@@ -172,8 +179,19 @@ public class MeasurementFactory
 		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_BTU_PER_SECOND, 0.00094781712));
 		
 		//
+		// Pressure
+		//    The reference will be pascal
+		//
+		Measurement pressureMeasurements = new Measurement(MEASURE_PRESSURE);
+		pressureMeasurements.addUnit(new MeasurementUnit(UNIT_PRESSURE_PASCAL));
+		pressureMeasurements.addUnit(new MeasurementUnit(UNIT_PRESSURE_ATMOSPHERE, 1.0/101325));
+		pressureMeasurements.addUnit(new MeasurementUnit(UNIT_PRESSURE_BAR, 1.0/100000));
+		pressureMeasurements.addUnit(new MeasurementUnit(UNIT_PRESSURE_PSI, 1.0/6894.75729));
+		pressureMeasurements.addUnit(new MeasurementUnit(UNIT_PRESSURE_TORR,1.0/133.322368));
+		
+		//
 		// Future measurements:
-		//		Power, Pressure, Currency
+		//		Currency
 		//
 
 		//
@@ -186,5 +204,6 @@ public class MeasurementFactory
 		this.measurements.put(MEASURE_MILEAGE,      mileageMeasurements);
 		this.measurements.put(MEASURE_AREA,         areaMeasurements);
 		this.measurements.put(MEASURE_POWER, 		powerMeasurements);
+		this.measurements.put(MEASURE_PRESSURE, 	pressureMeasurements);
 	}
 }
