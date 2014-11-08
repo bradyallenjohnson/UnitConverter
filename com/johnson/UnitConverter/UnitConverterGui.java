@@ -33,6 +33,7 @@ public class UnitConverterGui extends JFrame
 	private boolean initFlag;
 	private MeasurementFactory measurementFactory;
 	private JComboBox jcbMeasurementType;
+	private JButton jbtConvert;
 	private JLabel[] jlbLabels;
 	private JTextField[] jtfFields;
 	private JPanel jplLabels;
@@ -65,6 +66,7 @@ public class UnitConverterGui extends JFrame
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle(WINDOW_TITLE);
 		this.setSize(MAIN_WIN_SIZE_X, MAIN_WIN_SIZE_Y);
+		this.setResizable(true);
 
 		comboHandler = new ComboHandler();
 		textHandler = new TextHandler();
@@ -109,7 +111,7 @@ public class UnitConverterGui extends JFrame
 		//
 		// Buttons
 		//
-		JButton jbtConvert = new JButton(BUTTON_TEXT_CONVERT);
+		jbtConvert = new JButton(BUTTON_TEXT_CONVERT);
 		jbtConvert.setActionCommand(BUTTON_TEXT_CONVERT);
 		jbtConvert.addActionListener(buttonHandler);
 
@@ -182,6 +184,8 @@ public class UnitConverterGui extends JFrame
 			jtfFields[i].setText("");
 			jtfFields[i].setEditable(editable);
 		}
+		
+		jbtConvert.setEnabled(true);
 	}
 
 /* Use this to capture mouse selection, etc
@@ -213,6 +217,7 @@ public class UnitConverterGui extends JFrame
 			}
 			lastCmbType = cmbType;
 			setLabelsFields(cmbType);
+			jbtConvert.setEnabled(true);
 		}
 	}
 
@@ -238,6 +243,8 @@ public class UnitConverterGui extends JFrame
 			{
 				String unitName = null;
 				String value = null;
+				
+				jbtConvert.setEnabled(false);
 
 				for(int i = 0; i < NUM_LABELS_FIELDS; i++)
 				{
