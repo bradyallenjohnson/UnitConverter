@@ -23,6 +23,7 @@ public class UnitConverterMain
 
 	private static final String ARG_TEMP_CELSIUS    = "-c";
 	private static final String ARG_TEMP_FAHRENHEIT = "-f";
+	private static final String ARG_TEMP_KELVIN = "-k";
 
 	private static final String ARG_MILEAGE_MPG   = "-mpg";
 	private static final String ARG_MILEAGE_LPK   = "-lpk";
@@ -181,7 +182,11 @@ public class UnitConverterMain
 				input.measurementType = MeasurementFactory.MEASURE_TEMPERATURE;
 				input.measurementUnit = MeasurementFactory.UNIT_TEMP_FAHRENHEIT;
 			}
-
+			else if(ARG_TEMP_KELVIN.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_TEMPERATURE;
+				input.measurementUnit = MeasurementFactory.UNIT_TEMP_KELVIN;
+			}
 			//
 			// Mileage
 			//
@@ -284,6 +289,7 @@ public class UnitConverterMain
 	       "\nTemperatures:\n\t" +
 	       ARG_TEMP_CELSIUS     + "\t degrees celsius\n\t" +
 	       ARG_TEMP_FAHRENHEIT  + "\t degrees fahrenheit\n\t" +
+	       ARG_TEMP_KELVIN      + "\t degrees kelvin\n\t" +
 	       
 	       "\nGas Mileage:\n\t" +
 	       ARG_MILEAGE_MPG + "\t miles per gallon\n\t" +

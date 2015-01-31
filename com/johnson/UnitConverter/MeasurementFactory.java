@@ -5,6 +5,7 @@ import java.util.TreeMap;
 import java.util.Map;
 
 import com.johnson.UnitConverter.units.MeasurementUnitFahrenheit;
+import com.johnson.UnitConverter.units.MeasurementUnitKelvin;
 import com.johnson.UnitConverter.units.MeasurementUnitMileageKPL;
 import com.johnson.UnitConverter.units.MeasurementUnitMileageMPG;
 
@@ -41,6 +42,7 @@ public class MeasurementFactory
 
 	public final static String UNIT_TEMP_CELSIUS    = "celsius";
 	public final static String UNIT_TEMP_FAHRENHEIT = "fahrenheit";
+	public final static String UNIT_TEMP_KELVIN     = "kelvin";
 
 	public final static String UNIT_MILEAGE_LPK     = "liters per 100 km";
 	public final static String UNIT_MILEAGE_KPL     = "kilometers per liter";
@@ -129,6 +131,7 @@ public class MeasurementFactory
 		temperatureMeasurements.setDecimalPlaces(1);
 		temperatureMeasurements.addUnit(new MeasurementUnit(UNIT_TEMP_CELSIUS));
 		temperatureMeasurements.addUnit(new MeasurementUnitFahrenheit(UNIT_TEMP_FAHRENHEIT));
+		temperatureMeasurements.addUnit(new MeasurementUnitKelvin(UNIT_TEMP_KELVIN));
 
 		//
 		// Volume
