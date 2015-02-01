@@ -199,7 +199,7 @@ public class MeasurementFactory
 		pressureMeasurements.addUnit(new MeasurementUnit(UNIT_PRESSURE_TORR,1.0/133.322368));
 		
 		//
-		// Weights
+		// Speed
 		//   The reference will be kilometers per hour
 		//
 		Measurement speedMeasurements = new Measurement(MEASURE_SPEED);
