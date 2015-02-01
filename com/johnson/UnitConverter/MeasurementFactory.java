@@ -224,6 +224,7 @@ public class MeasurementFactory
 		this.measurements.put(MEASURE_MILEAGE,      mileageMeasurements);
 		this.measurements.put(MEASURE_AREA,         areaMeasurements);
 		this.measurements.put(MEASURE_POWER, 		powerMeasurements);
+		this.measurements.put(MEASURE_PRESSURE, 	pressureMeasurements);
 		this.measurements.put(MEASURE_SPEED, 	    speedMeasurements);
 	}
 }
