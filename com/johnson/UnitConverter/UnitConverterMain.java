@@ -23,6 +23,7 @@ public class UnitConverterMain
 
 	private static final String ARG_TEMP_CELSIUS    = "-c";
 	private static final String ARG_TEMP_FAHRENHEIT = "-f";
+	private static final String ARG_TEMP_KELVIN = "-k";
 
 	private static final String ARG_MILEAGE_MPG   = "-mpg";
 	private static final String ARG_MILEAGE_LPK   = "-lpk";
@@ -35,6 +36,11 @@ public class UnitConverterMain
 	private static final String ARG_AREA_SQ_MILE  = "-mi2";
 	private static final String ARG_AREA_ACRE     = "-ac";
 	private static final String ARG_AREA_HECTARE  = "-ha";
+	
+	private static final String ARG_SPEED_KMH   = "-kmh";
+	private static final String ARG_SPEED_MPH   = "-mph";
+	private static final String ARG_SPEED_MS   = "-ms";
+	private static final String ARG_SPEED_KNOTS   = "-kn";
 
 	private static final String ARG_HELP_H        = "-h";
 	private static final String ARG_HELP          = "-help";
@@ -181,7 +187,11 @@ public class UnitConverterMain
 				input.measurementType = MeasurementFactory.MEASURE_TEMPERATURE;
 				input.measurementUnit = MeasurementFactory.UNIT_TEMP_FAHRENHEIT;
 			}
-
+			else if(ARG_TEMP_KELVIN.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_TEMPERATURE;
+				input.measurementUnit = MeasurementFactory.UNIT_TEMP_KELVIN;
+			}
 			//
 			// Mileage
 			//
@@ -239,6 +249,31 @@ public class UnitConverterMain
 				input.measurementType = MeasurementFactory.MEASURE_AREA;
 				input.measurementUnit = MeasurementFactory.UNIT_AREA_HECTARE;
 			}
+			
+			//
+			// Speed
+			//
+			else if(ARG_SPEED_KMH.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_SPEED;
+				input.measurementUnit = MeasurementFactory.UNIT_SPEED_KM_PER_HOUR;
+			}
+			else if(ARG_SPEED_MPH.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_SPEED;
+				input.measurementUnit = MeasurementFactory.UNIT_SPEED_MILES_PER_HOUR;
+			}
+			else if(ARG_SPEED_MS.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_SPEED;
+				input.measurementUnit = MeasurementFactory.UNIT_SPEED_METERS_PER_SECOND;
+			}
+			else if(ARG_SPEED_KNOTS.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_SPEED;
+				input.measurementUnit = MeasurementFactory.UNIT_SPEED_KNOTS;
+			}
+		
 
 			//
 			// Other args
@@ -284,6 +319,7 @@ public class UnitConverterMain
 	       "\nTemperatures:\n\t" +
 	       ARG_TEMP_CELSIUS     + "\t degrees celsius\n\t" +
 	       ARG_TEMP_FAHRENHEIT  + "\t degrees fahrenheit\n\t" +
+	       ARG_TEMP_KELVIN      + "\t degrees kelvin\n\t" +
 	       
 	       "\nGas Mileage:\n\t" +
 	       ARG_MILEAGE_MPG + "\t miles per gallon\n\t" +
@@ -298,6 +334,12 @@ public class UnitConverterMain
 	       ARG_AREA_SQ_YARD  + "\t square yards\n\t" +
 	       ARG_AREA_SQ_MILE  + "\t square miles\n\t" +
 	       ARG_AREA_ACRE     + "\t acres\n" +
+	       
+	       "\nSpeed:\n\t" +
+	       ARG_SPEED_KMH   + "\t kilometers per hour\n\t" +
+	       ARG_SPEED_MPH   + "\t miles per hour\n\t" +
+	       ARG_SPEED_MS    + "\t meters per second\n\t" +
+	       ARG_SPEED_KNOTS + "\t knots (nautical miles)\n\t" +
 
 	       "\nOther Commands:\n\t" +
 	       ARG_HELP_H + "\t Display this message, same as: " + ARG_HELP + " and " + ARG_HELP_QMARK + "\n");

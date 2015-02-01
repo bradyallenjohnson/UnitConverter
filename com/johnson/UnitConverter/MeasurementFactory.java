@@ -5,6 +5,7 @@ import java.util.TreeMap;
 import java.util.Map;
 
 import com.johnson.UnitConverter.units.MeasurementUnitFahrenheit;
+import com.johnson.UnitConverter.units.MeasurementUnitKelvin;
 import com.johnson.UnitConverter.units.MeasurementUnitMileageKPL;
 import com.johnson.UnitConverter.units.MeasurementUnitMileageMPG;
 
@@ -18,6 +19,7 @@ public class MeasurementFactory
 	public final static String MEASURE_AREA         = "Area";
 	public final static String MEASURE_POWER		= "Power";
 	public final static String MEASURE_PRESSURE		= "Pressure";
+	public final static String MEASURE_SPEED		= "Speed";
 
 	public final static String UNIT_LENGTH_CM       = "centimeter";
 	public final static String UNIT_LENGTH_METER    = "meter";
@@ -41,6 +43,7 @@ public class MeasurementFactory
 
 	public final static String UNIT_TEMP_CELSIUS    = "celsius";
 	public final static String UNIT_TEMP_FAHRENHEIT = "fahrenheit";
+	public final static String UNIT_TEMP_KELVIN     = "kelvin";
 
 	public final static String UNIT_MILEAGE_LPK     = "liters per 100 km";
 	public final static String UNIT_MILEAGE_KPL     = "kilometers per liter";
@@ -65,6 +68,11 @@ public class MeasurementFactory
 	public final static String UNIT_PRESSURE_BAR 	= "bar";
 	public final static String UNIT_PRESSURE_PSI 	= "psi";
 	public final static String UNIT_PRESSURE_TORR 	= "torr";
+	
+	public final static String UNIT_SPEED_KM_PER_HOUR = "kilometers per hour";
+	public final static String UNIT_SPEED_MILES_PER_HOUR = "miles per hour";
+	public final static String UNIT_SPEED_METERS_PER_SECOND = "meters per second";
+	public final static String UNIT_SPEED_KNOTS = "knots";
 	
 	private Map<String, Measurement> measurements;
 	private static MeasurementFactory instance = null;
@@ -129,6 +137,7 @@ public class MeasurementFactory
 		temperatureMeasurements.setDecimalPlaces(1);
 		temperatureMeasurements.addUnit(new MeasurementUnit(UNIT_TEMP_CELSIUS));
 		temperatureMeasurements.addUnit(new MeasurementUnitFahrenheit(UNIT_TEMP_FAHRENHEIT));
+		temperatureMeasurements.addUnit(new MeasurementUnitKelvin(UNIT_TEMP_KELVIN));
 
 		//
 		// Volume
@@ -190,12 +199,23 @@ public class MeasurementFactory
 		pressureMeasurements.addUnit(new MeasurementUnit(UNIT_PRESSURE_TORR,1.0/133.322368));
 		
 		//
+		// Speed
+		//   The reference will be kilometers per hour
+		//
+		Measurement speedMeasurements = new Measurement(MEASURE_SPEED);
+		speedMeasurements.addUnit(new MeasurementUnit(UNIT_SPEED_KM_PER_HOUR));
+		speedMeasurements.addUnit(new MeasurementUnit(UNIT_SPEED_METERS_PER_SECOND, 1.0/3.6));
+		speedMeasurements.addUnit(new MeasurementUnit(UNIT_SPEED_MILES_PER_HOUR,    1.0/1.609344));
+		speedMeasurements.addUnit(new MeasurementUnit(UNIT_SPEED_KNOTS,             1.0*0.539956803));
+		
+		
+		//
 		// Future measurements:
 		//		Currency
 		//
 
 		//
-		// Pupulate the map
+		// Populate the map
 		//
 		this.measurements.put(MEASURE_LENGTH,       lengthMeasurements);
 		this.measurements.put(MEASURE_WEIGHT,       weightMeasurements);
@@ -205,5 +225,6 @@ public class MeasurementFactory
 		this.measurements.put(MEASURE_AREA,         areaMeasurements);
 		this.measurements.put(MEASURE_POWER, 		powerMeasurements);
 		this.measurements.put(MEASURE_PRESSURE, 	pressureMeasurements);
+		this.measurements.put(MEASURE_SPEED, 	    speedMeasurements);
 	}
 }
