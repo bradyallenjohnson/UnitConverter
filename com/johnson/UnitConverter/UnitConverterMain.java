@@ -23,8 +23,22 @@ public class UnitConverterMain
 
 	private static final String ARG_TEMP_CELSIUS    = "-c";
 	private static final String ARG_TEMP_FAHRENHEIT = "-f";
-	private static final String ARG_TEMP_KELVIN = "-k";
+	private static final String ARG_TEMP_KELVIN     = "-k";
+	
+	private static final String ARG_POWER_WATT		           = "-w";
+	private static final String ARG_POWER_HORSEPOWER          = "-hp";
+	private static final String ARG_POWER_CALORIES_PER_SECOND = "-cps";
+	private static final String ARG_POWER_BTU_PER_SECOND      = "-btu";
+	private static final String ARG_POWER_MEGAWATT		       = "-mw";
+	private static final String ARG_POWER_KILOWATT		       = "-kw";
 
+	private static final String ARG_PRESSURE_PASCAL     = "-pa";
+	private static final String ARG_PRESSURE_ATMOSPHERE = "-atm";
+	private static final String ARG_PRESSURE_BAR 	     = "-bar";
+	private static final String ARG_PRESSURE_PSI 	     = "-psi";
+	private static final String ARG_PRESSURE_TORR 	     = "-torr";
+
+	private static final String ARG_MILEAGE_KPL   = "-kpl";
 	private static final String ARG_MILEAGE_MPG   = "-mpg";
 	private static final String ARG_MILEAGE_LPK   = "-lpk";
 
@@ -39,8 +53,8 @@ public class UnitConverterMain
 	
 	private static final String ARG_SPEED_KMH   = "-kmh";
 	private static final String ARG_SPEED_MPH   = "-mph";
-	private static final String ARG_SPEED_MS   = "-ms";
-	private static final String ARG_SPEED_KNOTS   = "-kn";
+	private static final String ARG_SPEED_MS    = "-ms";
+	private static final String ARG_SPEED_KNOTS = "-kn";
 
 	private static final String ARG_HELP_H        = "-h";
 	private static final String ARG_HELP          = "-help";
@@ -192,9 +206,78 @@ public class UnitConverterMain
 				input.measurementType = MeasurementFactory.MEASURE_TEMPERATURE;
 				input.measurementUnit = MeasurementFactory.UNIT_TEMP_KELVIN;
 			}
+			
+			//
+			// Power
+			//
+			else if(ARG_POWER_WATT.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_POWER;
+				input.measurementUnit = MeasurementFactory.UNIT_POWER_WATT;
+			}
+			else if(ARG_POWER_HORSEPOWER.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_POWER;
+				input.measurementUnit = MeasurementFactory.UNIT_POWER_HORSEPOWER;
+			}
+			else if(ARG_POWER_CALORIES_PER_SECOND.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_POWER;
+				input.measurementUnit = MeasurementFactory.UNIT_POWER_CALORIES_PER_SECOND;
+			}
+			else if(ARG_POWER_BTU_PER_SECOND.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_POWER;
+				input.measurementUnit = MeasurementFactory.UNIT_POWER_BTU_PER_SECOND;
+			}
+			else if(ARG_POWER_MEGAWATT.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_POWER;
+				input.measurementUnit = MeasurementFactory.UNIT_POWER_MEGAWATT;
+			}
+			else if(ARG_POWER_KILOWATT.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_POWER;
+				input.measurementUnit = MeasurementFactory.UNIT_POWER_KILOWATT;
+			}
+			
+			//
+			// Pressure
+			//
+			else if(ARG_PRESSURE_PASCAL.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_PRESSURE;
+				input.measurementUnit = MeasurementFactory.UNIT_PRESSURE_PASCAL;
+			}
+			else if(ARG_PRESSURE_ATMOSPHERE.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_PRESSURE;
+				input.measurementUnit = MeasurementFactory.UNIT_PRESSURE_ATMOSPHERE;
+			}
+			else if(ARG_PRESSURE_BAR.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_PRESSURE;
+				input.measurementUnit = MeasurementFactory.UNIT_PRESSURE_BAR;
+			}
+			else if(ARG_PRESSURE_PSI.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_PRESSURE;
+				input.measurementUnit = MeasurementFactory.UNIT_PRESSURE_PSI;
+			}
+			else if(ARG_PRESSURE_TORR.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_PRESSURE;
+				input.measurementUnit = MeasurementFactory.UNIT_PRESSURE_TORR;
+			}
+			
 			//
 			// Mileage
 			//
+			else if(ARG_MILEAGE_KPL.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_MILEAGE;
+				input.measurementUnit = MeasurementFactory.UNIT_MILEAGE_KPL;
+			}
 			else if(ARG_MILEAGE_LPK.equals(argv))
 			{
 				input.measurementType = MeasurementFactory.MEASURE_MILEAGE;
@@ -320,6 +403,22 @@ public class UnitConverterMain
 	       ARG_TEMP_CELSIUS     + "\t degrees celsius\n\t" +
 	       ARG_TEMP_FAHRENHEIT  + "\t degrees fahrenheit\n\t" +
 	       ARG_TEMP_KELVIN      + "\t degrees kelvin\n\t" +
+	       
+	       "\nPower:\n\t" +
+	       ARG_POWER_WATT                + "\t watts\n\t" +
+	       ARG_POWER_HORSEPOWER          + "\t horsepower\n\t" +
+	       ARG_POWER_CALORIES_PER_SECOND + "\t calories per second\n\t" +
+	       ARG_POWER_BTU_PER_SECOND      + "\t BTU per second\n\t" +
+	       ARG_POWER_KILOWATT            + "\t kilowatts\n\t" +
+	       ARG_POWER_MEGAWATT            + "\t megawatts\n\t" +
+	       
+           "\nPressure:\n\t" +
+           ARG_PRESSURE_PASCAL     + "\t pascal\n\t" +
+           ARG_PRESSURE_ATMOSPHERE + "\t atosphere\n\t" +
+           ARG_PRESSURE_BAR        + "\t bar\n\t" +
+           ARG_PRESSURE_PSI        + "\t psi\n\t" +
+           ARG_PRESSURE_TORR       + "\t torr\n\t" +
+           
 	       
 	       "\nGas Mileage:\n\t" +
 	       ARG_MILEAGE_MPG + "\t miles per gallon\n\t" +

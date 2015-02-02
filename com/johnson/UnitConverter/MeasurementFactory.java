@@ -62,6 +62,8 @@ public class MeasurementFactory
 	public final static String UNIT_POWER_HORSEPOWER = "horsepower";
 	public final static String UNIT_POWER_CALORIES_PER_SECOND = "calories per second";
 	public final static String UNIT_POWER_BTU_PER_SECOND = "BTU per second";
+	public final static String UNIT_POWER_MEGAWATT		= "megawatt";
+	public final static String UNIT_POWER_KILOWATT		= "kilowatt";
 
 	public final static String UNIT_PRESSURE_PASCAL = "pascal";
 	public final static String UNIT_PRESSURE_ATMOSPHERE = "atmosphere";
@@ -186,6 +188,9 @@ public class MeasurementFactory
 		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_HORSEPOWER, 1.0/745.699872));
 		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_CALORIES_PER_SECOND, 0.239005736));
 		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_BTU_PER_SECOND, 0.00094781712));
+		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_KILOWATT, 1.0/1000));
+		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_MEGAWATT, 1.0/1000000));
+		
 		
 		//
 		// Pressure
