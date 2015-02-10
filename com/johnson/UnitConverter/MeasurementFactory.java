@@ -4,6 +4,9 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.Map;
 
+import com.johnson.UnitConverter.Measurement;
+import com.johnson.UnitConverter.MeasurementUnit;
+import com.johnson.UnitConverter.units.MeasurementUnitCurrency;
 import com.johnson.UnitConverter.units.MeasurementUnitFahrenheit;
 import com.johnson.UnitConverter.units.MeasurementUnitKelvin;
 import com.johnson.UnitConverter.units.MeasurementUnitMileageKPL;
@@ -20,6 +23,8 @@ public class MeasurementFactory
 	public final static String MEASURE_POWER		= "Power";
 	public final static String MEASURE_PRESSURE		= "Pressure";
 	public final static String MEASURE_SPEED		= "Speed";
+	public final static String MEASURE_ANGLE        = "Angle Measurments";
+	public final static String MEASURE_CURRENCY     = "Currency";
 
 	public final static String UNIT_LENGTH_CM       = "centimeter";
 	public final static String UNIT_LENGTH_METER    = "meter";
@@ -75,6 +80,21 @@ public class MeasurementFactory
 	public final static String UNIT_SPEED_MILES_PER_HOUR = "miles per hour";
 	public final static String UNIT_SPEED_METERS_PER_SECOND = "meters per second";
 	public final static String UNIT_SPEED_KNOTS = "knots";
+	
+	public final static String UNIT_ANGLE_DEGREES   = "degrees";
+	public final static String UNIT_ANGLE_RADIANS   = "radians";
+	public final static String UNIT_ANGLE_GRADIANS  = "gradians";
+	
+	public final static String UNIT_CURRENCY_USD = "U.S. Dollars";
+	public final static String UNIT_CURRENCY_EUR = "Euros";
+	public final static String UNIT_CURRENCY_GBP = "British Pounds";
+	public final static String UNIT_CURRENCY_INR = "Indian Rupee";
+	public final static String UNIT_CURRENCY_AUD = "Australian Dollars";
+	public final static String UNIT_CURRENCY_CAD = "Canadian Dollars";
+	public final static String UNIT_CURRENCY_SGD = "Singapore Dollars";
+	public final static String UNIT_CURRENCY_JPY = "Japanese Yen";
+	public final static String UNIT_CURRENCY_CNY = "Chinese Yuan";
+	public final static String UNIT_CURRENCY_RUB = "Russian Ruble";
 	
 	private Map<String, Measurement> measurements;
 	private static MeasurementFactory instance = null;
@@ -213,12 +233,32 @@ public class MeasurementFactory
 		speedMeasurements.addUnit(new MeasurementUnit(UNIT_SPEED_MILES_PER_HOUR,    1.0/1.609344));
 		speedMeasurements.addUnit(new MeasurementUnit(UNIT_SPEED_KNOTS,             1.0*0.539956803));
 		
+		//
+		//Angular Measure
+		//   The reference will be Degrees
+		//
+		Measurement angleMeasurements = new Measurement(MEASURE_ANGLE);
+		angleMeasurements.addUnit(new MeasurementUnit(UNIT_ANGLE_DEGREES));
+		angleMeasurements.addUnit(new MeasurementUnit(UNIT_ANGLE_RADIANS, 1.0/57.2957795));
+		angleMeasurements.addUnit(new MeasurementUnit(UNIT_ANGLE_GRADIANS, 1.0/0.9));
 		
 		//
-		// Future measurements:
-		//		Currency
+		//Currency
+		//	The reference will be U.S. Dollars (USD)
 		//
-
+		Measurement currencyMeasurements = new Measurement(MEASURE_CURRENCY);
+		MeasurementUnitCurrency rate = new MeasurementUnitCurrency();
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_USD));
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_EUR, 1.0*rate.getRate("EUR")));
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_GBP, 1.0*rate.getRate("GBP")));
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_INR, 1.0*rate.getRate("INR")));
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_AUD, 1.0*rate.getRate("AUD")));
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_CAD, 1.0*rate.getRate("CAD")));
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_SGD, 1.0*rate.getRate("SGD")));
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_JPY, 1.0*rate.getRate("JPY")));
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_CNY, 1.0*rate.getRate("CNY")));
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_RUB, 1.0*rate.getRate("RUB")));
+		
 		//
 		// Populate the map
 		//
@@ -231,5 +271,7 @@ public class MeasurementFactory
 		this.measurements.put(MEASURE_POWER, 		powerMeasurements);
 		this.measurements.put(MEASURE_PRESSURE, 	pressureMeasurements);
 		this.measurements.put(MEASURE_SPEED, 	    speedMeasurements);
+		this.measurements.put(MEASURE_ANGLE,        angleMeasurements);
+		this.measurements.put(MEASURE_CURRENCY,     currencyMeasurements);
 	}
 }
