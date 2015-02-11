@@ -56,6 +56,10 @@ public class UnitConverterMain
 	private static final String ARG_SPEED_MS    = "-ms";
 	private static final String ARG_SPEED_KNOTS = "-kn";
 	
+	private static final String ARG_ANGLE_DEGREES  = "-deg";
+	private static final String ARG_ANGLE_RADIANS  = "-rad";
+	private static final String ARG_ANGLE_GRADIANS = "-grd";
+	
 	private static final String ARG_CURRENCY_USD = "-usd";
 	private static final String ARG_CURRENCY_EUR = "-eur";
 	private static final String ARG_CURRENCY_GBP = "-gbp";
@@ -369,6 +373,25 @@ public class UnitConverterMain
 			}
 			
 			//
+			// Angular Measure
+			//
+			else if(ARG_ANGLE_DEGREES.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_ANGLE;
+				input.measurementUnit = MeasurementFactory.UNIT_ANGLE_DEGREES;
+			}
+			else if(ARG_ANGLE_RADIANS.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_ANGLE;
+				input.measurementUnit = MeasurementFactory.UNIT_ANGLE_RADIANS;
+			}
+			else if(ARG_ANGLE_GRADIANS.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_ANGLE;
+				input.measurementUnit = MeasurementFactory.UNIT_ANGLE_GRADIANS;
+			}
+			
+			//
 			// Currency
 			//
 			else if(ARG_CURRENCY_USD.equals(argv))
@@ -505,6 +528,11 @@ public class UnitConverterMain
 	       ARG_SPEED_MPH   + "\t miles per hour\n\t" +
 	       ARG_SPEED_MS    + "\t meters per second\n\t" +
 	       ARG_SPEED_KNOTS + "\t knots (nautical miles)\n\t" +
+	       
+		   "\nAngular Measure:\n\t" +
+		   ARG_ANGLE_DEGREES    + "\t degrees\n\t" +
+		   ARG_ANGLE_RADIANS    + "\t radians\n\t" +
+		   ARG_ANGLE_GRADIANS   + "\t gradians\n\t" +
 	       
 	       "\nCurrency:\n\t" +
 	       ARG_CURRENCY_USD   + "\t U.S. Dollars\n\t" +
