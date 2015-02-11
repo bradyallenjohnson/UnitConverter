@@ -2,6 +2,7 @@
 *~
 *.mk
 *.class
+.DS_Store
 build/
 nbproject/
 .sconsign.dblite
