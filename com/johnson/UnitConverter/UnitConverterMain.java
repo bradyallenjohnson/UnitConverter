@@ -55,6 +55,17 @@ public class UnitConverterMain
 	private static final String ARG_SPEED_MPH   = "-mph";
 	private static final String ARG_SPEED_MS    = "-ms";
 	private static final String ARG_SPEED_KNOTS = "-kn";
+	
+	private static final String ARG_CURRENCY_USD = "-usd";
+	private static final String ARG_CURRENCY_EUR = "-eur";
+	private static final String ARG_CURRENCY_GBP = "-gbp";
+	private static final String ARG_CURRENCY_INR = "-inr";
+	private static final String ARG_CURRENCY_AUD = "-aud";
+	private static final String ARG_CURRENCY_CAD = "-cad";
+	private static final String ARG_CURRENCY_SGD = "-sgd";
+	private static final String ARG_CURRENCY_JPY = "-jpy";
+	private static final String ARG_CURRENCY_CNY = "-cny";
+	private static final String ARG_CURRENCY_RUB = "-rub";
 
 	private static final String ARG_HELP_H        = "-h";
 	private static final String ARG_HELP          = "-help";
@@ -356,6 +367,61 @@ public class UnitConverterMain
 				input.measurementType = MeasurementFactory.MEASURE_SPEED;
 				input.measurementUnit = MeasurementFactory.UNIT_SPEED_KNOTS;
 			}
+			
+			//
+			// Currency
+			//
+			else if(ARG_CURRENCY_USD.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			else if(ARG_CURRENCY_EUR.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			else if(ARG_CURRENCY_GBP.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			else if(ARG_CURRENCY_INR.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			else if(ARG_CURRENCY_AUD.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			else if(ARG_CURRENCY_CAD.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			else if(ARG_CURRENCY_SGD.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			else if(ARG_CURRENCY_JPY.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			else if(ARG_CURRENCY_CNY.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			else if(ARG_CURRENCY_RUB.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			
 		
 
 			//
@@ -439,6 +505,18 @@ public class UnitConverterMain
 	       ARG_SPEED_MPH   + "\t miles per hour\n\t" +
 	       ARG_SPEED_MS    + "\t meters per second\n\t" +
 	       ARG_SPEED_KNOTS + "\t knots (nautical miles)\n\t" +
+	       
+	       "\nCurrency:\n\t" +
+	       ARG_CURRENCY_USD   + "\t U.S. Dollars\n\t" +
+	       ARG_CURRENCY_EUR   + "\t Euros\n\t" +
+	       ARG_CURRENCY_GBP   + "\t British Pounds\n\t" +
+	       ARG_CURRENCY_INR   + "\t Indian Rupee\t" +
+	       ARG_CURRENCY_AUD   + "\t Australian Dollars\n\t" +
+	       ARG_CURRENCY_CAD   + "\t Canadian Dollars\n\t" +
+	       ARG_CURRENCY_SGD   + "\t Singapore Dollars\n\t" +
+	       ARG_CURRENCY_JPY   + "\t Japanese Yen\n\t" +
+	       ARG_CURRENCY_CNY   + "\t Chinese Yuan\n\t" +
+	       ARG_CURRENCY_RUB   + "\t Russian Ruble\n\t" +
 
 	       "\nOther Commands:\n\t" +
 	       ARG_HELP_H + "\t Display this message, same as: " + ARG_HELP + " and " + ARG_HELP_QMARK + "\n");
