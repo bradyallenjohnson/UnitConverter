@@ -23,7 +23,7 @@ public class MeasurementFactory
 	public final static String MEASURE_POWER		= "Power";
 	public final static String MEASURE_PRESSURE		= "Pressure";
 	public final static String MEASURE_SPEED		= "Speed";
-	public final static String MEASURE_ANGLE        = "Angle Measurments";
+	public final static String MEASURE_ANGLE        = "Angle Measurements";
 	public final static String MEASURE_CURRENCY     = "Currency";
 
 	public final static String UNIT_LENGTH_CM       = "centimeter";
