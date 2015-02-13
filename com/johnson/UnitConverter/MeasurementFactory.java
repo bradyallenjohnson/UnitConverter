@@ -38,13 +38,13 @@ public class MeasurementFactory
 	public final static String UNIT_WEIGHT_POUND    = "pound";
 	public final static String UNIT_WEIGHT_OUNCE    = "ounce";
 
-	public final static String UNIT_VOLUME_LITER    = "liter";
+	public final static String UNIT_VOLUME_LITER     = "liter";
 	public final static String UNIT_VOLUME_MILILITER = "mililiter";
-	public final static String UNIT_VOLUME_GALLON   = "gallon";
-	public final static String UNIT_VOLUME_CUP      = "cup";
-	public final static String UNIT_VOLUME_PINT     = "pint";
-	public final static String UNIT_VOLUME_QUART    = "quart";
-	public final static String UNIT_VOLUME_OUNCE    = "ounce";
+	public final static String UNIT_VOLUME_GALLON    = "gallon";
+	public final static String UNIT_VOLUME_CUP       = "cup";
+	public final static String UNIT_VOLUME_PINT      = "pint";
+	public final static String UNIT_VOLUME_QUART     = "quart";
+	public final static String UNIT_VOLUME_OUNCE     = "ounce";
 
 	public final static String UNIT_TEMP_CELSIUS    = "celsius";
 	public final static String UNIT_TEMP_FAHRENHEIT = "fahrenheit";
@@ -63,23 +63,23 @@ public class MeasurementFactory
 	public final static String UNIT_AREA_ACRE       = "acre";
 	public final static String UNIT_AREA_HECTARE    = "hectare";
 	
-	public final static String UNIT_POWER_WATT		= "watt";
-	public final static String UNIT_POWER_HORSEPOWER = "horsepower";
+	public final static String UNIT_POWER_WATT		          = "watt";
+	public final static String UNIT_POWER_HORSEPOWER          = "horsepower";
 	public final static String UNIT_POWER_CALORIES_PER_SECOND = "calories per second";
-	public final static String UNIT_POWER_BTU_PER_SECOND = "BTU per second";
-	public final static String UNIT_POWER_MEGAWATT		= "megawatt";
-	public final static String UNIT_POWER_KILOWATT		= "kilowatt";
+	public final static String UNIT_POWER_BTU_PER_SECOND      = "BTU per second";
+	public final static String UNIT_POWER_MEGAWATT		      = "megawatt";
+	public final static String UNIT_POWER_KILOWATT		      = "kilowatt";
 
-	public final static String UNIT_PRESSURE_PASCAL = "pascal";
+	public final static String UNIT_PRESSURE_PASCAL     = "pascal";
 	public final static String UNIT_PRESSURE_ATMOSPHERE = "atmosphere";
-	public final static String UNIT_PRESSURE_BAR 	= "bar";
-	public final static String UNIT_PRESSURE_PSI 	= "psi";
-	public final static String UNIT_PRESSURE_TORR 	= "torr";
+	public final static String UNIT_PRESSURE_BAR 	    = "bar";
+	public final static String UNIT_PRESSURE_PSI 	    = "psi";
+	public final static String UNIT_PRESSURE_TORR 	    = "torr";
 	
-	public final static String UNIT_SPEED_KM_PER_HOUR = "kilometers per hour";
-	public final static String UNIT_SPEED_MILES_PER_HOUR = "miles per hour";
+	public final static String UNIT_SPEED_KM_PER_HOUR       = "kilometers per hour";
+	public final static String UNIT_SPEED_MILES_PER_HOUR    = "miles per hour";
 	public final static String UNIT_SPEED_METERS_PER_SECOND = "meters per second";
-	public final static String UNIT_SPEED_KNOTS = "knots";
+	public final static String UNIT_SPEED_KNOTS             = "knots";
 	
 	public final static String UNIT_ANGLE_DEGREES   = "degrees";
 	public final static String UNIT_ANGLE_RADIANS   = "radians";
@@ -205,11 +205,11 @@ public class MeasurementFactory
 		Measurement powerMeasurements = new Measurement(MEASURE_POWER);
 		powerMeasurements.setDecimalPlaces(3);
 		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_WATT));
-		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_HORSEPOWER, 1.0/745.699872));
+		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_HORSEPOWER,          1.0/745.699872));
 		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_CALORIES_PER_SECOND, 0.239005736));
-		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_BTU_PER_SECOND, 0.00094781712));
-		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_KILOWATT, 1.0/1000));
-		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_MEGAWATT, 1.0/1000000));
+		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_BTU_PER_SECOND,      0.00094781712));
+		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_KILOWATT,            1.0/1000));
+		powerMeasurements.addUnit(new MeasurementUnit(UNIT_POWER_MEGAWATT,            1.0/1000000));
 		
 		
 		//
@@ -219,9 +219,9 @@ public class MeasurementFactory
 		Measurement pressureMeasurements = new Measurement(MEASURE_PRESSURE);
 		pressureMeasurements.addUnit(new MeasurementUnit(UNIT_PRESSURE_PASCAL));
 		pressureMeasurements.addUnit(new MeasurementUnit(UNIT_PRESSURE_ATMOSPHERE, 1.0/101325));
-		pressureMeasurements.addUnit(new MeasurementUnit(UNIT_PRESSURE_BAR, 1.0/100000));
-		pressureMeasurements.addUnit(new MeasurementUnit(UNIT_PRESSURE_PSI, 1.0/6894.75729));
-		pressureMeasurements.addUnit(new MeasurementUnit(UNIT_PRESSURE_TORR,1.0/133.322368));
+		pressureMeasurements.addUnit(new MeasurementUnit(UNIT_PRESSURE_BAR,        1.0/100000));
+		pressureMeasurements.addUnit(new MeasurementUnit(UNIT_PRESSURE_PSI,        1.0/6894.75729));
+		pressureMeasurements.addUnit(new MeasurementUnit(UNIT_PRESSURE_TORR,       1.0/133.322368));
 		
 		//
 		// Speed
@@ -249,15 +249,15 @@ public class MeasurementFactory
 		Measurement currencyMeasurements = new Measurement(MEASURE_CURRENCY);
 		MeasurementUnitCurrency rate = new MeasurementUnitCurrency();
 		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_USD));
-		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_EUR, 1.0*rate.getRate("EUR")));
-		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_GBP, 1.0*rate.getRate("GBP")));
-		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_INR, 1.0*rate.getRate("INR")));
-		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_AUD, 1.0*rate.getRate("AUD")));
-		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_CAD, 1.0*rate.getRate("CAD")));
-		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_SGD, 1.0*rate.getRate("SGD")));
-		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_JPY, 1.0*rate.getRate("JPY")));
-		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_CNY, 1.0*rate.getRate("CNY")));
-		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_RUB, 1.0*rate.getRate("RUB")));
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_EUR, rate.getRate("EUR")));
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_GBP, rate.getRate("GBP")));
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_INR, rate.getRate("INR")));
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_AUD, rate.getRate("AUD")));
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_CAD, rate.getRate("CAD")));
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_SGD, rate.getRate("SGD")));
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_JPY, rate.getRate("JPY")));
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_CNY, rate.getRate("CNY")));
+		currencyMeasurements.addUnit(new MeasurementUnit(UNIT_CURRENCY_RUB, rate.getRate("RUB")));
 		
 		//
 		// Populate the map

@@ -25,12 +25,12 @@ public class UnitConverterMain
 	private static final String ARG_TEMP_FAHRENHEIT = "-f";
 	private static final String ARG_TEMP_KELVIN     = "-k";
 	
-	private static final String ARG_POWER_WATT		           = "-w";
+	private static final String ARG_POWER_WATT		          = "-w";
 	private static final String ARG_POWER_HORSEPOWER          = "-hp";
 	private static final String ARG_POWER_CALORIES_PER_SECOND = "-cps";
 	private static final String ARG_POWER_BTU_PER_SECOND      = "-btu";
-	private static final String ARG_POWER_MEGAWATT		       = "-mw";
-	private static final String ARG_POWER_KILOWATT		       = "-kw";
+	private static final String ARG_POWER_MEGAWATT		      = "-mw";
+	private static final String ARG_POWER_KILOWATT		      = "-kw";
 
 	private static final String ARG_PRESSURE_PASCAL     = "-pa";
 	private static final String ARG_PRESSURE_ATMOSPHERE = "-atm";
