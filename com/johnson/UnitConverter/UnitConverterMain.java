@@ -23,8 +23,22 @@ public class UnitConverterMain
 
 	private static final String ARG_TEMP_CELSIUS    = "-c";
 	private static final String ARG_TEMP_FAHRENHEIT = "-f";
-	private static final String ARG_TEMP_KELVIN = "-k";
+	private static final String ARG_TEMP_KELVIN     = "-k";
+	
+	private static final String ARG_POWER_WATT		          = "-w";
+	private static final String ARG_POWER_HORSEPOWER          = "-hp";
+	private static final String ARG_POWER_CALORIES_PER_SECOND = "-cps";
+	private static final String ARG_POWER_BTU_PER_SECOND      = "-btu";
+	private static final String ARG_POWER_MEGAWATT		      = "-mw";
+	private static final String ARG_POWER_KILOWATT		      = "-kw";
 
+	private static final String ARG_PRESSURE_PASCAL     = "-pa";
+	private static final String ARG_PRESSURE_ATMOSPHERE = "-atm";
+	private static final String ARG_PRESSURE_BAR 	     = "-bar";
+	private static final String ARG_PRESSURE_PSI 	     = "-psi";
+	private static final String ARG_PRESSURE_TORR 	     = "-torr";
+
+	private static final String ARG_MILEAGE_KPL   = "-kpl";
 	private static final String ARG_MILEAGE_MPG   = "-mpg";
 	private static final String ARG_MILEAGE_LPK   = "-lpk";
 
@@ -39,8 +53,23 @@ public class UnitConverterMain
 	
 	private static final String ARG_SPEED_KMH   = "-kmh";
 	private static final String ARG_SPEED_MPH   = "-mph";
-	private static final String ARG_SPEED_MS   = "-ms";
-	private static final String ARG_SPEED_KNOTS   = "-kn";
+	private static final String ARG_SPEED_MS    = "-ms";
+	private static final String ARG_SPEED_KNOTS = "-kn";
+	
+	private static final String ARG_ANGLE_DEGREES  = "-deg";
+	private static final String ARG_ANGLE_RADIANS  = "-rad";
+	private static final String ARG_ANGLE_GRADIANS = "-grd";
+	
+	private static final String ARG_CURRENCY_USD = "-usd";
+	private static final String ARG_CURRENCY_EUR = "-eur";
+	private static final String ARG_CURRENCY_GBP = "-gbp";
+	private static final String ARG_CURRENCY_INR = "-inr";
+	private static final String ARG_CURRENCY_AUD = "-aud";
+	private static final String ARG_CURRENCY_CAD = "-cad";
+	private static final String ARG_CURRENCY_SGD = "-sgd";
+	private static final String ARG_CURRENCY_JPY = "-jpy";
+	private static final String ARG_CURRENCY_CNY = "-cny";
+	private static final String ARG_CURRENCY_RUB = "-rub";
 
 	private static final String ARG_HELP_H        = "-h";
 	private static final String ARG_HELP          = "-help";
@@ -192,9 +221,78 @@ public class UnitConverterMain
 				input.measurementType = MeasurementFactory.MEASURE_TEMPERATURE;
 				input.measurementUnit = MeasurementFactory.UNIT_TEMP_KELVIN;
 			}
+			
+			//
+			// Power
+			//
+			else if(ARG_POWER_WATT.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_POWER;
+				input.measurementUnit = MeasurementFactory.UNIT_POWER_WATT;
+			}
+			else if(ARG_POWER_HORSEPOWER.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_POWER;
+				input.measurementUnit = MeasurementFactory.UNIT_POWER_HORSEPOWER;
+			}
+			else if(ARG_POWER_CALORIES_PER_SECOND.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_POWER;
+				input.measurementUnit = MeasurementFactory.UNIT_POWER_CALORIES_PER_SECOND;
+			}
+			else if(ARG_POWER_BTU_PER_SECOND.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_POWER;
+				input.measurementUnit = MeasurementFactory.UNIT_POWER_BTU_PER_SECOND;
+			}
+			else if(ARG_POWER_MEGAWATT.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_POWER;
+				input.measurementUnit = MeasurementFactory.UNIT_POWER_MEGAWATT;
+			}
+			else if(ARG_POWER_KILOWATT.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_POWER;
+				input.measurementUnit = MeasurementFactory.UNIT_POWER_KILOWATT;
+			}
+			
+			//
+			// Pressure
+			//
+			else if(ARG_PRESSURE_PASCAL.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_PRESSURE;
+				input.measurementUnit = MeasurementFactory.UNIT_PRESSURE_PASCAL;
+			}
+			else if(ARG_PRESSURE_ATMOSPHERE.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_PRESSURE;
+				input.measurementUnit = MeasurementFactory.UNIT_PRESSURE_ATMOSPHERE;
+			}
+			else if(ARG_PRESSURE_BAR.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_PRESSURE;
+				input.measurementUnit = MeasurementFactory.UNIT_PRESSURE_BAR;
+			}
+			else if(ARG_PRESSURE_PSI.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_PRESSURE;
+				input.measurementUnit = MeasurementFactory.UNIT_PRESSURE_PSI;
+			}
+			else if(ARG_PRESSURE_TORR.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_PRESSURE;
+				input.measurementUnit = MeasurementFactory.UNIT_PRESSURE_TORR;
+			}
+			
 			//
 			// Mileage
 			//
+			else if(ARG_MILEAGE_KPL.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_MILEAGE;
+				input.measurementUnit = MeasurementFactory.UNIT_MILEAGE_KPL;
+			}
 			else if(ARG_MILEAGE_LPK.equals(argv))
 			{
 				input.measurementType = MeasurementFactory.MEASURE_MILEAGE;
@@ -273,6 +371,80 @@ public class UnitConverterMain
 				input.measurementType = MeasurementFactory.MEASURE_SPEED;
 				input.measurementUnit = MeasurementFactory.UNIT_SPEED_KNOTS;
 			}
+			
+			//
+			// Angular Measure
+			//
+			else if(ARG_ANGLE_DEGREES.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_ANGLE;
+				input.measurementUnit = MeasurementFactory.UNIT_ANGLE_DEGREES;
+			}
+			else if(ARG_ANGLE_RADIANS.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_ANGLE;
+				input.measurementUnit = MeasurementFactory.UNIT_ANGLE_RADIANS;
+			}
+			else if(ARG_ANGLE_GRADIANS.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_ANGLE;
+				input.measurementUnit = MeasurementFactory.UNIT_ANGLE_GRADIANS;
+			}
+			
+			//
+			// Currency
+			//
+			else if(ARG_CURRENCY_USD.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			else if(ARG_CURRENCY_EUR.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			else if(ARG_CURRENCY_GBP.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			else if(ARG_CURRENCY_INR.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			else if(ARG_CURRENCY_AUD.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			else if(ARG_CURRENCY_CAD.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			else if(ARG_CURRENCY_SGD.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			else if(ARG_CURRENCY_JPY.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			else if(ARG_CURRENCY_CNY.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			else if(ARG_CURRENCY_RUB.equals(argv))
+			{
+				input.measurementType = MeasurementFactory.MEASURE_CURRENCY;
+				input.measurementUnit = MeasurementFactory.UNIT_CURRENCY_USD;
+			}
+			
 		
 
 			//
@@ -321,6 +493,22 @@ public class UnitConverterMain
 	       ARG_TEMP_FAHRENHEIT  + "\t degrees fahrenheit\n\t" +
 	       ARG_TEMP_KELVIN      + "\t degrees kelvin\n\t" +
 	       
+	       "\nPower:\n\t" +
+	       ARG_POWER_WATT                + "\t watts\n\t" +
+	       ARG_POWER_HORSEPOWER          + "\t horsepower\n\t" +
+	       ARG_POWER_CALORIES_PER_SECOND + "\t calories per second\n\t" +
+	       ARG_POWER_BTU_PER_SECOND      + "\t BTU per second\n\t" +
+	       ARG_POWER_KILOWATT            + "\t kilowatts\n\t" +
+	       ARG_POWER_MEGAWATT            + "\t megawatts\n\t" +
+	       
+           "\nPressure:\n\t" +
+           ARG_PRESSURE_PASCAL     + "\t pascal\n\t" +
+           ARG_PRESSURE_ATMOSPHERE + "\t atosphere\n\t" +
+           ARG_PRESSURE_BAR        + "\t bar\n\t" +
+           ARG_PRESSURE_PSI        + "\t psi\n\t" +
+           ARG_PRESSURE_TORR       + "\t torr\n\t" +
+           
+	       
 	       "\nGas Mileage:\n\t" +
 	       ARG_MILEAGE_MPG + "\t miles per gallon\n\t" +
 	       ARG_MILEAGE_LPK + "\t liters per 100 km\n" +
@@ -340,6 +528,23 @@ public class UnitConverterMain
 	       ARG_SPEED_MPH   + "\t miles per hour\n\t" +
 	       ARG_SPEED_MS    + "\t meters per second\n\t" +
 	       ARG_SPEED_KNOTS + "\t knots (nautical miles)\n\t" +
+	       
+		   "\nAngular Measure:\n\t" +
+		   ARG_ANGLE_DEGREES    + "\t degrees\n\t" +
+		   ARG_ANGLE_RADIANS    + "\t radians\n\t" +
+		   ARG_ANGLE_GRADIANS   + "\t gradians\n\t" +
+	       
+	       "\nCurrency:\n\t" +
+	       ARG_CURRENCY_USD   + "\t U.S. Dollars\n\t" +
+	       ARG_CURRENCY_EUR   + "\t Euros\n\t" +
+	       ARG_CURRENCY_GBP   + "\t British Pounds\n\t" +
+	       ARG_CURRENCY_INR   + "\t Indian Rupee\t" +
+	       ARG_CURRENCY_AUD   + "\t Australian Dollars\n\t" +
+	       ARG_CURRENCY_CAD   + "\t Canadian Dollars\n\t" +
+	       ARG_CURRENCY_SGD   + "\t Singapore Dollars\n\t" +
+	       ARG_CURRENCY_JPY   + "\t Japanese Yen\n\t" +
+	       ARG_CURRENCY_CNY   + "\t Chinese Yuan\n\t" +
+	       ARG_CURRENCY_RUB   + "\t Russian Ruble\n\t" +
 
 	       "\nOther Commands:\n\t" +
 	       ARG_HELP_H + "\t Display this message, same as: " + ARG_HELP + " and " + ARG_HELP_QMARK + "\n");
